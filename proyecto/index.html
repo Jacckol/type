@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Libro de Calificaciones</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilo.css">
+
+
+</head>
+
+<body>
+  <main>
+    <div class="container">
+     <div class="card" style="width:18rem;">
+    <div class="card-header">
+            ESTUDIANTE
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Nombre:</label>
+              <input type="text" name="fullName" id="fullName" class="form-control"
+                placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+              <label for="identification" class="form-label">Identificación:</label>
+              <input type="text" name="identification" id="identification" class="form-control" placeholder="0000000"
+                maxlength="10">
+            </div>
+            <div class="mb-3">
+              <label for="mail" class="form-label">Correo:</label>
+              <input type="text" name="mail" id="mail" class="form-control" placeholder="@gmail.com">
+            </div>
+            <div class="mb-3">
+              <label for="direction" class="form-label">Dirección:</label>
+              <input type="text" name="direction" id="direction" class="form-control" placeholder="Marin central">
+            </div>
+            <div class="mb-3">
+              <label for="enrollment" class="form-label">Matrícula:</label>
+              <input type="text" name="enrollment" id="enrollment" class="form-control" placeholder="01">
+            </div>
+            <div class="mb-3">
+              <label for="level" class="form-label">Nivel:</label>
+              <input type="text" name="level" id="level" class="form-control" placeholder="Tercero">
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <button class="btn btn-primary" onclick="addStudent()">Agregar estudiante</button>
+          </div>
+        </div>
+        <hr>
+        <div class="card" style="width:18rem;">
+          <div class="card-header">
+            DOCENTE
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="fullName-teacher" class="form-label">Nombre:</label>
+              <input type="text" name="fullName-teacher" id="fullName-teacher" class="form-control"
+                placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+              <label for="identification-teacher" class="form-label">Identificación:</label>
+              <input type="text" name="identification-teacher" id="identification-teacher" class="form-control"
+                placeholder="0000000" maxlength="10">
+            </div>
+            <div class="mb-3">
+              <label for="mail-teacher" class="form-label">Correo:</label>
+              <input type="text" name="mail-teacher" id="mail-teacher" class="form-control"
+                placeholder="@gmail.com">
+            </div>
+            <div class="mb-3">
+              <label for="direction-teacher" class="form-label">Dirección:</label>
+              <input type="text" name="direction-teacher" id="direction-teacher" class="form-control"
+                placeholder="Marin central">
+            </div>
+            <div class="mb-3">
+              <label for="title-teacher" class="form-label">Título:</label>
+              <input type="text" name="title-teacher" id="title-teacher" class="form-control"
+                placeholder="Medicina">
+            </div>
+            <div class="mb-3">
+              <label for="area-teacher" class="form-label">Area: </label>
+              <select class="form-select" name="" id="area-teacher">
+              </select>
+            </div>
+
+          </div>
+          <div class="card-footer text-muted">
+            <button class="btn btn-primary" onclick="addTeacher()">Agregar profesor</button>
+          </div>
+        </div>
+      <hr>
+      <div class="card" style="width:18rem;">
+        <div class="card-header">
+          ACTIVIDAD
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="name-activity" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name-activity" placeholder="Examen">
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <button class="btn btn-primary" onclick="addActivity()">Agregar actividad</button>
+        </div>
+      </div>
+      <hr>
+      <div class="card" style="width:18rem;">
+        <div class="card-header">
+            LIBRO DE CALIFICACIONES
+          </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="value-gradebook" class="form-label">Valor:</label>
+                <input type="text" name="value-gradebook" id="value-gradebook" class="form-control" placeholder="100%">
+              </div>
+              <div class="mb-3">
+                <label for="course-gradebook" class="form-label">Curso:</label>
+                <input type="text" class="form-control" id="course-gradebook" placeholder="Tercero">
+              </div>
+              <div class="mb-3">
+                <label for="activity" class="form-label">Actividad:</label>
+                <select class="form-select" name="activity" id="activity">
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="maximungrade-gradebook" class="form-label">Nota máxima:</label>
+                <input type="text" name="maximungrade-gradebook" id="maximungrade-gradebook" class="form-control"
+                  placeholder="100%">
+              </div>
+            </div>
+            <div class="card-footer text-muted">
+              <button class="btn btn-primary" onclick="addGradeBookSetup()">Agregar
+                calificaciones</button>
+            </div>
+  
+        </div>
+        <hr>
+        <div class="card" style="width:18rem;">
+          <div class="card-header">
+            DETALLE DE CALIFICACIONES
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="datail-student" class="form-label">Estudiante:</label>
+              <select name="student" class="form-select" id="detail-student"></select>
+            </div>
+            <div class="mb-3">
+              <label for="detail-course" class="form-label">Curso:</label>
+              <select name="detail-course" class="form-select" id="detail-course">
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="detail-note" class="form-label">Nota:</label>
+              <input type="number" id="detail-note" class="form-control">
+            </div>
+            
+            <span id="status"></span>
+            <div class="mb-3">
+              <label for="detail-teacher" class="form-label">Docente:</label>
+              <select name="detail-teacher" class="form-select" id="detail-teacher"></select>
+            </div>
+          
+          <div class="card-footer text-muted">
+            <button class="btn btn-primary" onclick="addSummary()">Agregar detalle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <table id="transactionTable"class="table table-secundary table-striped table-hover table-bordered table-sm table-responsive-sm">
+    <thead>
+      <tr>
+        <th scope="col">Estudiante</th>
+        <th scope="col">identification</th>
+        <th scope="col">nivel</th>
+        <th scope="col">curso</th>
+        <th scope="col">profesor</th>
+        <th scope="col">nota </th>
+        <th scope="col">estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Jacckol</th>
+        <td>1725912370</td>
+        <td>segundo</td>
+        <td>Desarrollo</td>
+        <td>lucia</td>
+        <td>70</td>
+        <td>aprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">naomi</th>
+        <td>1202563829</td>
+        <td>tercero</td>
+        <td>programcion</td>
+        <td>fanny</td>
+        <td>20</td>
+        <td>reprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">Saled</th>
+        <td>120267657</td>
+        <td>cuarto</td>
+        <td>programacion</td>
+        <td>lore</td>
+        <td>79</td>
+        <td>aprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">Lucas</th>
+        <td>124435543</td>
+        <td>quinto</td>
+        <td>programacion</td>
+        <td>jackol</td>
+        <td>20</td>
+        <td>reprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">anahi</th>
+        <td>120865233</td>
+        <td>cuarto</td>
+        <td>marketing</td>
+        <td>evaristo</td>
+        <td>80</td>
+        <td>aprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">Saled</th>
+        <td>120267657</td>
+        <td>cuarto</td>
+        <td>programacion</td>
+        <td>erika</td>
+        <td>70</td>
+        <td>aprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">lucas</th>
+        <td>13091222</td>
+        <td>primero</td>
+        <td>programacion</td>
+        <td>mario</td>
+        <td>79</td>
+        <td>aprobado</td>
+      </tr>
+      <tr>
+        <th scope="row">estafania</th>
+        <td>12026557</td>
+        <td>sexto</td>
+        <td>turismo</td>
+        <td>oswaldo</td>
+        <td>50</td>
+        <td>reprobado</td>
+      </tr>
+    </tbody>
+  </table>
+    <script>let exports = {}; </script>
+    <script src="dist/main.js"></script>
+   
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
